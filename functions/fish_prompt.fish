@@ -222,7 +222,7 @@ end
 
 function prompt_status -d "the symbols for a non zero exit status, root and background jobs"
     if [ $RETVAL -ne 0 ]
-      prompt_segment black red "✘"
+      prompt_segment black red "✘ $RETVAL"
     end
 
     # if superuser (uid == 0)
@@ -237,30 +237,19 @@ function prompt_status -d "the symbols for a non zero exit status, root and back
     end
 end
 
-if printf '%s\n' '2.2.0' $FISH_VERSION | sort --check=silent --version-sort
-  # Current version ≥ 2.2.0
-  function __exists -a name -d "Check if a function or program does exist."
-    command -v "$name" ^/dev/null >&2
-  end
-else
-  # Current version < 2.2.0
-  function __exists -a name -d "Check if a function or program does exist."
-    type "$name" ^/dev/null >&2
-  end
-end
-
 
 #
 # Prompt
 #
 function fish_prompt
+
   set -g RETVAL $status
   prompt_status
   prompt_virtual_env
   prompt_user
   prompt_dir
-  __exists hg;  and prompt_hg
-  __exists git; and prompt_git
-  __exists svn; and prompt_svn
+  type -q hg;  and prompt_hg
+  type -q git; and prompt_git
+  type -q svn; and prompt_svn
   prompt_finish
 end

@@ -1,36 +1,25 @@
-<img src="http://cdn.bulbagarden.net/upload/4/40/090Shellder.png"
-  align=left width=175px height=175px>
+<img src="https://i.imgur.com/lnIlmDQ.png"
+  align=left width=300px>
 
-shellder
+🦊🐟 Foxfish
 ========
 > Things are beautiful if you love them. ― *[Jean Anouilh]*<br>
 [![i-license]](/LICENSE)
 
 <br>
 
-![](http://i.imgur.com/xZJHgq8.png)
+Anti-anxiety [Fish shell](https://fishshell.com/) theme, optimized for use with
+[wal](https://github.com/dylanaraps/pywal) and for Python development.
 
-1. **Speed** ― Carefully optimized for slow environments like msys2
-2. **No solarized** ― xterm256 colors are beautiful enough, inspired by [seoul256.vim]
-3. **zsh** + **fish** support
+![](https://i.imgur.com/1F70ODa.png)
+
+Forked from [simnalamburt/shellder](https://github.com/simnalamburt/shellder).
 
 Installation
 --------
-### fish
-Use [chips]. Add to `~/.config/chips/plugin.yaml`:
-
-```yaml
-github:
-- simnalamburt/shellder
-```
-
-Then run `chips`.
-
-### zsh
-Use [zplug]. Add below to your `.zshrc`:
-
-```zsh
-zplug 'simnalamburt/shellder', as:theme
+Use [fisher].
+```fish
+fisher Slavfox/foxfish
 ```
 
 ## Fonts
@@ -42,14 +31,14 @@ patch some fonts on you own.
 
 --------
 
-[MIT License] © [simnalamburt] et [al]
+[MIT License] © [Slavfox] et [simnalamburt] et [al]
 
 [Jean Anouilh]:   https://en.wikipedia.org/wiki/Jean_Anouilh
 [seoul256.vim]:   https://github.com/junegunn/seoul256.vim
-[zplug]:          https://github.com/zplug/zplug
-[chips]:          https://github.com/xtendo-org/chips
+[fisher]:          https://github.com/xtendo-org/chips
 [MIT License]:    https://opensource.org/licenses/MIT
 [simnalamburt]:   https://github.com/simnalamburt
+[Slavfox]:        https://github.com/Slavfox
 [al]:             https://github.com/simnalamburt/shellder/graphs/contributors
 
 [i-license]:      https://img.shields.io/badge/license-MIT-blue.svg
