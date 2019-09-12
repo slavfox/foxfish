@@ -28,7 +28,7 @@ end
 # Segments functions
 #
 set -g current_bg NONE
-set -g segment_separator \uE0B0
+set -g segment_separator ""
 
 function prompt_segment -d "Function to draw a segment"
   set -l bg
@@ -124,7 +124,7 @@ function prompt_hg -d "Display mercurial state"
     if command hg prompt >/dev/null 2>&1
       set branch (command hg prompt "{branch}")
       set state (command hg prompt "{status}")
-      set branch_symbol \uE0A0
+      set branch_symbol 
       if [ "$state" = "!" ]
         prompt_segment red white "$branch_symbol $branch ±"
       else if [ "$state" = "?" ]
@@ -145,7 +145,7 @@ function prompt_git -d "Display the current git state"
       set -l branch (command git show-ref --head -s --abbrev |head -n1 2> /dev/null)
       set ref "➦ $branch "
     end
-    set branch_symbol \uE0A0
+    set branch_symbol 
     set -l branch (echo $ref | sed  "s-refs/heads/-$branch_symbol -")
 
     set -l BG PROMPT
@@ -196,7 +196,7 @@ function prompt_svn -d "Display the current svn state"
   set -l ref
   if command svn ls . >/dev/null 2>&1
     set branch (svn_get_branch)
-    set branch_symbol \uE0A0
+    set branch_symbol 
     set revision (svn_get_revision)
     prompt_segment green black "$branch_symbol $branch:$revision"
   end
@@ -222,18 +222,18 @@ end
 
 function prompt_status -d "the symbols for a non zero exit status, root and background jobs"
     if [ $RETVAL -ne 0 ]
-      prompt_segment black red "✘ $RETVAL"
+      prompt_segment black red "✖ $RETVAL"
     end
 
     # if superuser (uid == 0)
     set -l uid (id -u $USER)
     if [ $uid -eq 0 ]
-      prompt_segment black yellow "⚡"
+      prompt_segment black yellow 
     end
 
     # Jobs display
     if [ (jobs -l | wc -l) -gt 0 ]
-      prompt_segment black cyan "⚙"
+      prompt_segment black cyan ...
     end
 end
 
