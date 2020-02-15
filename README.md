@@ -19,7 +19,7 @@ Installation
 --------
 Use [fisher].
 ```fish
-fisher Slavfox/foxfish
+fisher add Slavfox/foxfish
 ```
 
 ## Fonts
